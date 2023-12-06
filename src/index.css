@@ -1,0 +1,377 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 12px;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  background-color: #efefef;
+}
+
+#root {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 
+
+.App {
+  width: 100%;
+  max-width: 800px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border: 1px solid #333;
+  box-shadow: 0px 0px 15px gray;
+}
+
+.Header, .Footer {
+  width: 100%;
+  /* background: linear-gradient(to right, #afafaf, #F7F7F7); */
+  background-color: white;
+  background: linear-gradient(to right, #36d7b7, #ffffff);
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Footer{
+  background-color: black;
+
+}
+
+.Header h1 {
+  font-size: 1.5rem;
+}
+
+.Footer {
+  padding: 0.75rem;
+  display: grid;
+  place-content: center;
+  
+}
+.Footer h1{
+  font-size: 25px;
+
+}
+
+
+.Nav {
+  width: 100%;
+  background-color: #333;
+  display: flex;
+ 
+}
+
+ .searchForm {
+  width: 80%;
+  padding: 1rem 0 0 0.75rem;
+} 
+
+.searchForm input[type="text"] {
+  font-family: 'Open Sans', sans-serif;
+  width: 100%;
+  min-height: 48px;
+  font-size: 1rem;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  outline: none;
+} 
+
+.searchForm label {
+  position: absolute;
+  left: -99999px;
+}
+
+.Nav ul {
+  color: #fff;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.Nav li {
+  padding: 1rem;
+}
+
+.Nav li:hover, 
+.Nav li:focus {
+  padding: 10px;
+}
+
+
+.Nav li a {
+  color: #fff;
+  text-decoration: none;
+}
+.active a{
+ border-bottom: 2px solid #36d7b7;
+}
+.Nav li:hover, 
+.Nav li:focus, 
+.Nav li:hover a, 
+.Nav li:focus a  {
+  background-color: #eee;
+  color: #333;
+}
+
+.Nav li:hover a, 
+.Nav li:focus a {
+  cursor: pointer;
+} 
+
+.Home {
+  position: relative;
+}
+
+.Home .loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+ 
+}
+.Home, .NewPost, .PostPage, .About, .Missing {
+  width: 100%;
+  flex-grow: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  background-color: #fff;
+}
+.About p{
+  color: #333;
+}
+
+.post {
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid lightgray;
+}
+
+.Home .post a {
+  text-decoration: none;
+}
+
+.Home .post a, 
+.Home .post a:visited {
+  color: #000;
+}
+
+.post:first-child {
+  margin-top: 0;
+}
+
+.post:last-child {
+  border-bottom: none;
+}
+
+.postTitle{
+  font-family :  "Eesti","Helvetica","sans-serif";
+  text-transform: capitalize;
+}
+
+.postDate {
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.postBody {
+  margin: 1rem 0;
+  font-family: "Sectra","Georgia";
+  text-transform: capitalize;
+
+}
+
+.postTitle:hover , .postBody:hover{
+  color : #00A6EB;
+}
+
+.newPostForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.newPostForm label {
+  margin-top: 1rem;
+}
+
+.newPostForm input[type='text'], 
+.newPostForm textarea {
+  font-family: 'Open Sans', sans-serif;
+  width: 100%;
+  min-height: 48px;
+  font-size: 1rem;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  margin-right: 0.25rem;
+  outline: none;
+}
+
+.newPostForm textarea {
+  height: 100px;
+}
+
+.newPostForm button {
+  margin-top: 1rem;
+  height: 48px;
+  min-width: 48px;
+  border-radius: 10px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.Missing p, .PostPage p, .NewPost p {
+  margin-top: 1rem;
+}
+
+.PostPage button {
+  height: 48px;
+  min-width: 48px;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+  font-size: 1rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.deleteButton {
+  background-color: red;
+}
+
+.editButton {
+  background-color: blue;
+}
+
+.statusMsg {
+  margin-top: 2rem;
+}
+
+@media only screen and (min-width: 480px) {
+  html {
+    font-size: 22px;
+  }
+
+  .Header h1 {
+    font-size: 2rem;
+  }
+
+  .Nav {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .Nav ul {
+    text-align: right;
+  }
+
+  .Nav li:hover, 
+  .Nav li:focus, 
+  .Nav li:hover a, 
+  .Nav li:focus a  {
+    background-color: #eee;
+    color: #333;
+  }
+
+  .searchForm {
+    width: 50%;
+    padding: .5rem 0;
+  }
+ 
+  .searchForm input[type="text"] {
+    margin-left: 0.5rem;
+  }
+
+  .newPostForm textarea {
+    height: 300px;
+  }
+}
+
+@media only screen and (max-width: 470px) {
+
+  .Nav {
+  display: flex;
+    flex-direction: column-reverse; 
+   justify-content: center;
+   align-items: center;
+   background: linear-gradient(to right, #36d7b7, #ffffff);
+ 
+  }
+  .Nav li {
+  padding: 10px;
+  margin: 0 15px;
+  font-size: 15px;
+
+  }
+  .Nav li a {
+    color: black;
+    box-shadow: 0 0 5px black;
+    padding: 5px;
+}
+  .searchForm {
+    padding-bottom: 15px;
+}
+  .searchForm input[type="text"] {
+    min-height: 30px;
+    font-size: 1rem;
+    padding: 0.25rem;
+  } 
+  .postTitle{
+    font-size: 25px;
+  }
+  .postBody {
+    font-size: 18px;
+  }
+  .postDate {
+    font-size: 15px;
+  }
+  .newPostForm label {
+    font-size: 25px;
+}
+.newPostForm input[type='text'], .newPostForm textarea {
+  min-height: 38px;
+  font-size: 20px;
+  border-radius: 10px;
+}
+.newPostForm button {
+  height: 38px;
+  font-size: 20px;
+  background: linear-gradient(to right, #36d7b7, #ffffff);
+}
+.active a{
+  border-bottom: 3px solid  black;
+ }
+ .About p {
+  font-size: 15px;
+}
+.About h3{
+  font-size: 20px;
+}
+.PostPage button {
+  height: 38px;
+  min-width: 48px;
+  border-radius: 5px;
+  padding: 0.5rem;
+  font-size: 16px;
+}
+
+}
