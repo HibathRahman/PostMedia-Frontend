@@ -11,6 +11,8 @@ import About from "./About";
 import Editpost from "./Editpost";
 import axios from "axios";
 
+ const API_URL = "https://postmedia-4xz1.onrender.com/posts"
+
 const App = () => {
   const [posts, setposts] = useState([]);
   let [loading, setLoading] = useState(true);
@@ -26,7 +28,7 @@ const App = () => {
     setLoading(true);
 
     try {
-      const res = await axios.get("http://localhost:3500/posts");
+      const res = await axios.get(API_URL);
       setposts(res.data);
       setLoading(false);
     } catch (err) {
@@ -59,7 +61,7 @@ const App = () => {
     try {
       e.preventDefault();
       const newPost = { title: postTitle, body: postBody };
-      await axios.post("http://localhost:3500/posts", newPost);
+      await axios.post(API_URL, newPost);
       setpostTitle("");
       setpostBody("");
       navigate("/");
@@ -78,7 +80,7 @@ const App = () => {
   // DELETE
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:3500/posts/${id}`);
+      await axios.delete(`${API_URL}/${id}`);
       navigate("/");
       fetchdata();
     } catch (err) {
@@ -90,7 +92,7 @@ const App = () => {
   const handleEdit = async (id) => {
     try {
       const updatedPost = { title: editTitle, body: editBody };
-      await axios.put(`http://localhost:3500/posts/${id}`, updatedPost);
+      await axios.put(`${API_URL}/${id}`, updatedPost);
       setEditTitle("");
       setEditBody("");
       navigate("/");
