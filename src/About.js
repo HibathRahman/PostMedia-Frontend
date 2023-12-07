@@ -5,8 +5,7 @@ const About = () => {
     <div className="About">
       <h3>Welcome to Post Media</h3>
       <p style={{ margin: "10px 0 10px" }}>
-        Greetings! I'm M.Hibath Rahman, the creator and facilitator of [Your
-        Blog Name]. This platform is a space where you have the power to share
+        Greetings! I'm M.Hibath Rahman, the creator and facilitator of Post Media. This platform is a space where you have the power to share
         your thoughts, stories, and news with the world.
       </p>
       <h3>Let's Connect !</h3>
