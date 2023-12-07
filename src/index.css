@@ -73,6 +73,8 @@ body {
   width: 100%;
   background-color: #333;
   display: flex;
+   background: linear-gradient(to right, #36d7b7, #ffffff);
+ 
  
 }
 
@@ -109,12 +111,6 @@ body {
 .Nav li {
   padding: 1rem;
 }
-
-.Nav li:hover, 
-.Nav li:focus {
-  padding: 10px;
-}
-
 
 .Nav li a {
   color: #fff;
@@ -264,7 +260,7 @@ body {
   margin-top: 2rem;
 }
 
-@media only screen and (min-width: 480px) {
+@media only screen and (min-width: 471px) {
   html {
     font-size: 22px;
   }
@@ -340,6 +336,8 @@ body {
   }
   .postBody {
     font-size: 18px;
+       flex-wrap: wrap;
+    max-width: 400px;
   }
   .postDate {
     font-size: 15px;
